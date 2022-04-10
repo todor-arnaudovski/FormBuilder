@@ -1,0 +1,33 @@
+[
+  {
+    "formTitle": "Some survey",
+    "formDescription": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi adipisci nesciunt quas nisi odio ipsa suscipit quidem pariatur aliquam iusto."
+  },
+  [
+    {
+      "id" : 1,
+      "fieldType": "text",
+      "fieldProperties": {
+        "label": "First field label",
+        "placeholder" : "First field placeholder",
+        "required": true
+      }
+    },
+    {
+      "id" : 2,
+      "fieldType": "text",
+      "fieldProperties": {
+        "label": "Second field label",
+        "placeholder" : "Second field placeholder"
+      }
+    },
+    {
+      "id" : 3,
+      "fieldType": "textarea",
+      "fieldProperties": {
+        "label": "Third field label",
+        "placeholder" : "Third field placeholder"
+      }
+    }
+  ]
+]

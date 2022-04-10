@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Builder Exercise</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section class="d-flex align-items-center h-100">
+      <div class="container">
+        <div class="form-title-wrapper mb-2 text-center bubble-top-right">
+          <h1 id="formTitle" class="mb-1"></h1>
+          <p id="formDescription"></p>
+        </div>
+        <form id="formElement" class="form-style-1">
+          <!-- <div class="form-group mb-2">
+          <label for="field1">Label for input 1</label>
+          <input type="text" class="form-control" id="field1" />
+        </div> -->
+          <!-- <div class="form-group">
+          <label for="field2">Label for input 1</label>
+          <textarea class="form-control" id="field2" rows="3"></textarea>
+        </div> -->
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const formElement = document.getElementById('formElement');
+
+      const getData = async () => {
+        const response = await fetch('./formStructureData.json');
+        const formStructure = await response.json();
+
+        return formStructure;
+      };
+
+      const createFieldLabel = (id, label, fieldWrapper) => {
+        const newFieldLabel = document.createElement('label');
+        newFieldLabel.htmlFor = `field${id}`;
+        newFieldLabel.innerText = label;
+
+        fieldWrapper.append(newFieldLabel);
+      };
+
+      const createTextFIeld = (id, fieldType, fieldProps, fieldWrapper) => {
+        const newField = document.createElement('input');
+        newField.type = fieldType;
+        newField.id = `field${id}`;
+        newField.classList.add('form-control');
+        if (fieldProps.placeholder)
+          newField.placeholder = fieldProps.placeholder;
+
+        fieldWrapper.append(newField);
+      };
+
+      const createField = (id, fieldType, fieldProps) => {
+        const fieldWrapper = document.createElement('div');
+        fieldWrapper.classList.add('form-group', 'mb-2');
+
+        switch (fieldType) {
+          case 'text':
+            if (fieldProps.label)
+              createFieldLabel(id, fieldProps.label, fieldWrapper);
+            createTextFIeld(id, fieldType, fieldProps, fieldWrapper);
+            break;
+          case 'textarea':
+            console.log('create textarea field');
+            break;
+          default:
+            console.log('Invalid field type');
+        }
+
+        formElement.appendChild(fieldWrapper);
+      };
+
+      const createForm = async () => {
+        const formData = await getData();
+
+        // Form title and descriptin
+        const formTitle = document.getElementById('formTitle'),
+          formDescription = document.getElementById('formDescription');
+
+        formTitle.innerText = formData[0].formTitle;
+        formDescription.innerText = formData[0].formDescription;
+
+        // Form fields
+        const formFields = formData[1];
+
+        formFields.forEach((field, i) => {
+          const { id, fieldType, fieldProperties } = field;
+
+          createField(id, fieldType, fieldProperties);
+        });
+      };
+
+      createForm();
+    </script>
+  </body>
+</html>

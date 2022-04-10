@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html {
+  background: #00416a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #e4e5e6,
+    #00416a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #e4e5e6,
+    #00416a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* color: #fff; */
+  height: 100vh;
+}
+body {
+  height: 100%;
+}
+label {
+  display: block;
+}
+/* Utilities */
+.mt-1,
+.my-1 {
+  margin-top: 1rem;
+}
+.mb-1,
+.my-1 {
+  margin-bottom: 1rem;
+}
+.mt-2,
+.my-2 {
+  margin-top: 2rem;
+}
+.mb-2,
+.my-2 {
+  margin-bottom: 2rem;
+}
+.text-center {
+  text-align: center;
+}
+.container {
+  /* max-width: 1140px; */
+  max-width: 630px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.d-flex {
+  display: flex;
+}
+.d-flex.align-items-center {
+  align-items: center;
+}
+.h-100 {
+  height: 100%;
+}
+
+/* Custom styles */
+.form-title-wrapper {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 3px;
+  padding: 30px;
+}
+.form-style-1 {
+  padding: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.form-style-1 input, .form-style-1 textarea {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+}
+.form-group label {
+  margin-bottom: 1rem;
+}
+input.form-control {
+  width: 50%;
+  min-width: 200px;
+  padding: 10px 15px;
+}
+.bubble-top-right {
+  position: relative;
+}
+.bubble-top-right:before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 70px;
+  height: 70px;
+  background-color: #00416a;
+  border-radius: 50%;
+  opacity: 0.3;
+}
