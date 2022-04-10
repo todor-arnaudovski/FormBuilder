@@ -26,6 +26,9 @@ body {
 label {
   display: block;
 }
+input, textarea {
+  padding: 10px 15px;
+}
 /* Utilities */
 .mt-1,
 .my-1 {
@@ -80,13 +83,23 @@ label {
   border: 1px solid #bbb;
   border-radius: 3px;
 }
-.form-group label {
+.form-group label,
+.form-group .checkbox-header {
   margin-bottom: 1rem;
 }
 input.form-control {
   width: 50%;
   min-width: 200px;
-  padding: 10px 15px;
+}
+textarea.form-control {
+  width: 100%;
+}
+.form-check label{
+  display: inline-block;
+  padding-left: 12px;
+}
+.form-check-label {
+  font-size: 0.875rem;
 }
 .bubble-top-right {
   position: relative;
@@ -101,4 +114,21 @@ input.form-control {
   background-color: #00416a;
   border-radius: 50%;
   opacity: 0.3;
+}
+.btn {
+  padding: 10px 30px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: background-color .3s ease-out;
+}
+.btn.btn-primary {
+  background-color: #00416a;
+  color: #fff;
+}
+.btn.btn-primary:hover {
+  background-color: #1782c5;
+}
+:focus-visible {
+  outline-color: #1782c5 !important;
 }

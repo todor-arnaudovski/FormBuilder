@@ -5,28 +5,84 @@
   },
   [
     {
-      "id" : 1,
+      "id": 1,
       "fieldType": "text",
       "fieldProperties": {
-        "label": "First field label",
-        "placeholder" : "First field placeholder",
+        "label": "First name",
+        "placeholder": "Enter first name",
         "required": true
       }
     },
     {
-      "id" : 2,
+      "id": 2,
       "fieldType": "text",
       "fieldProperties": {
-        "label": "Second field label",
-        "placeholder" : "Second field placeholder"
+        "label": "Last name",
+        "placeholder": "Enter last name",
+        "required": true
       }
     },
     {
-      "id" : 3,
+      "id": 3,
       "fieldType": "textarea",
       "fieldProperties": {
-        "label": "Third field label",
-        "placeholder" : "Third field placeholder"
+        "label": "Tell us something about yourself",
+        "placeholder": "Enter text here",
+        "rows": 5
+      }
+    },
+    {
+      "id": 4,
+      "fieldType": "textarea",
+      "fieldProperties": {
+        "label": "Fourth field label",
+        "placeholder": "Fourth field placeholder"
+      }
+    },
+    {
+      "id": 5,
+      "fieldType": "checkbox",
+      "fieldProperties": {
+        "label": "Contract type",
+        "options": [
+          "Full time",
+          "Part time",
+          "Freelance"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "fieldType": "radio",
+      "fieldProperties": {
+        "label": "Gender",
+        "options": [
+          "Male",
+          "Female",
+          "Rather not say"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "fieldType": "radio",
+      "fieldProperties": {
+        "label": "What department are you in?",
+        "options": [
+          "Support",
+          "Sales",
+          "Development"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "fieldType": "checkbox",
+      "fieldProperties": {
+        "label": "Terms & Conditions",
+        "options": [
+          "I agree to the terms & conditions"
+        ]
       }
     }
   ]
